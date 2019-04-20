@@ -74,13 +74,15 @@ import java.util.Date;
               public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                   itemList.clear();
-                    int count=0;
+                 //   int count=0;
                   for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
                       Item item=itemSnapshot.getValue(Item.class);
                       itemList.add(item);
-                      if(count==6){
-                          databaseReference.child(itemList.get(1).id).removeValue();
-                      }
+                    //  count++;
+                     // Toast.makeText(MainActivity.this,count,Toast.LENGTH_LONG).show();
+                    //  if(count==5){
+                      //    databaseReference.child(itemList.get(0).id).removeValue();
+                  //    }
                   }
 
 
