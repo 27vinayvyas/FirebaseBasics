@@ -74,15 +74,25 @@ import java.util.Date;
               public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                   itemList.clear();
-                 //   int count=0;
+                    int count=0;
                   for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
                       Item item=itemSnapshot.getValue(Item.class);
                       itemList.add(item);
-                    //  count++;
-                     // Toast.makeText(MainActivity.this,count,Toast.LENGTH_LONG).show();
-                    //  if(count==5){
-                      //    databaseReference.child(itemList.get(0).id).removeValue();
-                  //    }
+
+
+
+
+                  //
+
+
+
+                      count++;
+                      if(count==6){
+                          String sss=Integer.toString(count);
+                        //  Toast.makeText(MainActivity.this,sss,Toast.LENGTH_LONG).show();
+
+                          databaseReference.child(itemList.get(0).id).removeValue();
+                     }
                   }
 
 
